@@ -5,6 +5,7 @@ body {
   height: 100%;
   margin: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
   padding: 0;
   font-family: "Raleway", sans-serif;
   background-color: #010101;
@@ -75,6 +76,17 @@ body {
           animation-timing-function: cubic-bezier(0.5, 0, 0, 1) !important;
 }
 
+.sectionTitle {
+  font-size: 56px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
 .heroSection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -88,6 +100,79 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: relative;
+}
+
+.heroSection .scrollDownIcon {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 30px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+}
+
+.heroSection .scrollDownIcon span {
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 100px;
+  -webkit-animation: bounce-up 2s linear 0s infinite;
+          animation: bounce-up 2s linear 0s infinite;
+}
+
+@-webkit-keyframes bounce-up {
+  0% {
+    top: 0rem;
+  }
+  50% {
+    top: 1rem;
+  }
+  100% {
+    top: 0rem;
+  }
+}
+
+@keyframes bounce-up {
+  0% {
+    top: 0rem;
+  }
+  50% {
+    top: 1rem;
+  }
+  100% {
+    top: 0rem;
+  }
+}
+
+.heroSection .scrollDownIcon i {
+  margin-top: auto;
+  font-size: 24px;
+}
+
+.heroSection .scrollDownIconLeft {
+  left: 0;
+  right: unset;
+}
+
+.heroSection .scrollDownIconRight {
+  right: 0;
+  left: unset;
 }
 
 .heroSection .cubesContainer {
@@ -104,7 +189,9 @@ body {
           transform-style: preserve-3d;
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  margin-top: 8rem;
+  position: relative;
+  height: 50vh;
+  margin-top: 14rem;
   width: 30%;
 }
 
@@ -113,234 +200,34 @@ body {
   opacity: 1;
 }
 
-.heroSection .content {
-  width: 60%;
-  min-width: 950px;
-  padding: 2rem;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.heroSection .content .wrapper {
-  position: relative;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
-.heroSection .content .wrapper span {
-  font-size: 84px;
-  font-weight: 900;
-}
-
-.heroSection .content .wrapper .highlight {
+.heroSection .cubesContainer .cubes {
   position: absolute;
-  left: -0.5rem;
-  color: #3d93a9;
-}
-
-.heroSection .content .cover {
-  position: absolute;
-  right: 0;
   top: 0;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  font-size: 84px;
-  width: 100%;
-  height: 100%;
-  font-weight: 100;
-  color: rgba(61, 147, 169, 0);
-  background: #010101;
-  -webkit-animation: typing 3s steps(10) forwards;
-          animation: typing 3s steps(10) forwards;
+  left: 4rem;
 }
 
-@-webkit-keyframes typing {
-  0% {
-    color: #3d93a9;
-    width: 100%;
-  }
-  100% {
-  }
-  to {
-    width: 0;
-  }
-}
-
-@keyframes typing {
-  0% {
-    color: #3d93a9;
-    width: 100%;
-  }
-  100% {
-  }
-  to {
-    width: 0;
-  }
-}
-
-@-webkit-keyframes caret {
-  50% {
-    color: transparent;
-  }
-}
-
-@keyframes caret {
-  50% {
-    color: transparent;
-  }
-}
-
-.heroSection .content h1 {
-  line-height: 1.3;
-  position: relative;
-  margin: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding-left: 1rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.heroSection .content h1 .word {
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.heroSection .content h1 .word .letter {
-  font-size: 84px;
-  font-weight: 700;
-  -webkit-transition: color 0.5s steps(4, jump-both);
-  transition: color 0.5s steps(4, jump-both);
-}
-
-.heroSection .content h1 .word .letter:hover {
-  color: #3d93a9;
-}
-
-.heroSection .content h1 .before {
-  content: "<h1>";
-  position: absolute;
-  font-family: "Permanent Marker", cursive;
-  top: -1rem;
-  font-weight: 400;
-  z-index: 20;
-  color: #585858;
-  left: 0;
-}
-
-.heroSection .content h1 .after {
-  z-index: 20;
-  content: "</h1>";
-  position: absolute;
-  font-family: "Permanent Marker", cursive;
-  bottom: -1rem;
-  font-weight: 400;
-  color: #585858;
-  left: 0;
-}
-
-.heroSection .content .line1 .cover {
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
-
-.heroSection .content .line2 .cover {
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
-}
-
-.heroSection .content .line3 .cover {
-  -webkit-animation-delay: 7s;
-  animation-delay: 7s;
-  -webkit-animation-duration: 5s;
-  animation-duration: 5s;
-}
-
-.heroSection .content p {
-  margin: 3rem 0.5rem 5rem;
-  line-height: 1.5;
-  font-size: 56px;
-  padding-left: 1rem;
-  font-weight: 500;
-  position: relative;
-  letter-spacing: -5px;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.heroSection .content p .cover {
-  font-size: 56px;
-  -webkit-animation-delay: 12s;
-  animation-delay: 12s;
-  -webkit-animation-duration: 4s;
-  animation-duration: 4s;
-  height: 100%;
-}
-
-.heroSection .content p .letter {
-  -webkit-transition: color 0.5s steps(4, jump-both);
-  transition: color 0.5s steps(4, jump-both);
-}
-
-.heroSection .content p .letter:hover {
-  color: #3d93a9;
-}
-
-.heroSection .content p::before {
-  content: "<p>";
-  position: absolute;
-  font-family: "Permanent Marker", cursive;
-  top: -1rem;
-  font-weight: 400;
-  font-size: 24px;
-  color: #585858;
-  letter-spacing: 1px;
-  left: 0;
-  z-index: 20;
-}
-
-.heroSection .content p::after {
-  z-index: 20;
-  letter-spacing: 1px;
-  content: "</p>";
-  position: absolute;
-  font-family: "Permanent Marker", cursive;
-  bottom: -1rem;
-  font-weight: 400;
-  font-size: 24px;
-  color: #585858;
-  left: 0;
-}
-
-label,
-#shadows {
+.heroSection .cubesContainer label,
+.heroSection .cubesContainer #shadows {
   position: fixed;
   top: 2vmin;
   opacity: 0.5;
 }
 
-label {
+.heroSection .cubesContainer label {
   left: 6vmin;
   color: white;
   font-weight: bold;
 }
 
-#shadows {
+.heroSection .cubesContainer #shadows {
   left: 2vmin;
 }
 
-#shadows:not(:checked) ~ .cubes {
+.heroSection .cubesContainer #shadows:not(:checked) ~ .cubes {
   --shadow-filter: none;
 }
 
-.cubes {
+.heroSection .cubesContainer .cubes {
   width: 10vmin;
   height: 10vmin;
   -webkit-transform: rotateX(60deg) rotateZ(-45deg);
@@ -354,8 +241,8 @@ label {
           perspective: 9000px;
 }
 
-.cube,
-.large-shadow {
+.heroSection .cubesContainer .cube,
+.heroSection .cubesContainer .large-shadow {
   height: 10vmin;
   width: 10vmin;
   -webkit-transform-style: preserve-3d;
@@ -369,8 +256,8 @@ label {
   left: 0;
 }
 
-.cube > .cube-wrap,
-.large-shadow > .cube-wrap {
+.heroSection .cubesContainer .cube > .cube-wrap,
+.heroSection .cubesContainer .large-shadow > .cube-wrap {
   -webkit-animation: cube 4s infinite both;
           animation: cube 4s infinite both;
   position: absolute;
@@ -419,8 +306,8 @@ label {
   }
 }
 
-.cube[data-cube^="1"],
-.large-shadow[data-cube^="1"] {
+.heroSection .cubesContainer .cube[data-cube^="1"],
+.heroSection .cubesContainer .large-shadow[data-cube^="1"] {
   top: calc(-10vmin - 2px);
   --color-bg-top: #a0ebe8;
   --color-bg-bottom: #89e4e4;
@@ -428,16 +315,16 @@ label {
   --color-fl-bottom: #43a5b2;
 }
 
-.cube[data-cube^="2"],
-.large-shadow[data-cube^="2"] {
+.heroSection .cubesContainer .cube[data-cube^="2"],
+.heroSection .cubesContainer .large-shadow[data-cube^="2"] {
   --color-bg-top: #89e4e4;
   --color-bg-bottom: #76dee5;
   --color-fl-top: #43a5b2;
   --color-fl-bottom: #3d93a9;
 }
 
-.cube[data-cube^="3"],
-.large-shadow[data-cube^="3"] {
+.heroSection .cubesContainer .cube[data-cube^="3"],
+.heroSection .cubesContainer .large-shadow[data-cube^="3"] {
   top: calc(10vmin + 2px);
   --color-bg-top: #76dee5;
   --color-bg-bottom: #63d3d4;
@@ -445,50 +332,50 @@ label {
   --color-fl-bottom: #3b8d9f;
 }
 
-.cube[data-cube^="11"], .cube[data-cube^="21"], .cube[data-cube^="31"],
-.large-shadow[data-cube^="11"],
-.large-shadow[data-cube^="21"],
-.large-shadow[data-cube^="31"] {
+.heroSection .cubesContainer .cube[data-cube^="11"], .heroSection .cubesContainer .cube[data-cube^="21"], .heroSection .cubesContainer .cube[data-cube^="31"],
+.heroSection .cubesContainer .large-shadow[data-cube^="11"],
+.heroSection .cubesContainer .large-shadow[data-cube^="21"],
+.heroSection .cubesContainer .large-shadow[data-cube^="31"] {
   left: calc(-10vmin - 2px);
   --color-fr-top: #2d505f;
   --color-fr-bottom: #2d4f63;
 }
 
-.cube[data-cube^="12"], .cube[data-cube^="22"], .cube[data-cube^="32"],
-.large-shadow[data-cube^="12"],
-.large-shadow[data-cube^="22"],
-.large-shadow[data-cube^="32"] {
+.heroSection .cubesContainer .cube[data-cube^="12"], .heroSection .cubesContainer .cube[data-cube^="22"], .heroSection .cubesContainer .cube[data-cube^="32"],
+.heroSection .cubesContainer .large-shadow[data-cube^="12"],
+.heroSection .cubesContainer .large-shadow[data-cube^="22"],
+.heroSection .cubesContainer .large-shadow[data-cube^="32"] {
   --color-fr-top: #2d4f63;
   --color-fr-bottom: #2a5262;
 }
 
-.cube[data-cube^="13"], .cube[data-cube^="23"], .cube[data-cube^="33"],
-.large-shadow[data-cube^="13"],
-.large-shadow[data-cube^="23"],
-.large-shadow[data-cube^="33"] {
+.heroSection .cubesContainer .cube[data-cube^="13"], .heroSection .cubesContainer .cube[data-cube^="23"], .heroSection .cubesContainer .cube[data-cube^="33"],
+.heroSection .cubesContainer .large-shadow[data-cube^="13"],
+.heroSection .cubesContainer .large-shadow[data-cube^="23"],
+.heroSection .cubesContainer .large-shadow[data-cube^="33"] {
   left: calc(10vmin + 2px);
   --color-fr-top: #2a5262;
   --color-fr-bottom: #2a5467;
 }
 
-.cube[data-cube$="2"],
-.large-shadow[data-cube$="2"] {
+.heroSection .cubesContainer .cube[data-cube$="2"],
+.heroSection .cubesContainer .large-shadow[data-cube$="2"] {
   -webkit-transform: translateZ(calc(10vmin + 2px));
           transform: translateZ(calc(10vmin + 2px));
 }
 
-.cube[data-cube$="3"],
-.large-shadow[data-cube$="3"] {
+.heroSection .cubesContainer .cube[data-cube$="3"],
+.heroSection .cubesContainer .large-shadow[data-cube$="3"] {
   -webkit-transform: translateZ(calc(-10vmin - 2px));
           transform: translateZ(calc(-10vmin - 2px));
 }
 
-.large-shadows {
+.heroSection .cubesContainer .large-shadows {
   -webkit-transform: translateZ(-21vmin);
           transform: translateZ(-21vmin);
 }
 
-.large-shadow {
+.heroSection .cubesContainer .large-shadow {
   background: rgba(245, 245, 245, 0.2);
   height: 10vmin;
   width: 10vmin;
@@ -546,7 +433,7 @@ label {
   }
 }
 
-[class^="cube-"] {
+.heroSection .cubesContainer [class^="cube-"] {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -556,13 +443,13 @@ label {
   left: 0;
 }
 
-[class^="cube-"], [class^="cube-"]:before {
+.heroSection .cubesContainer [class^="cube-"], .heroSection .cubesContainer [class^="cube-"]:before {
   will-change: transform;
   -webkit-animation: any 4s infinite both;
           animation: any 4s infinite both;
 }
 
-[class^="cube-"]:before {
+.heroSection .cubesContainer [class^="cube-"]:before {
   content: "";
   display: block;
   position: absolute;
@@ -573,24 +460,24 @@ label {
   background-color: inherit;
 }
 
-.cube-top {
+.heroSection .cubesContainer .cube-top {
   -webkit-animation-name: cube-top;
           animation-name: cube-top;
   overflow: hidden;
 }
 
-.cube-top:before, .cube-top:after {
+.heroSection .cubesContainer .cube-top:before, .heroSection .cubesContainer .cube-top:after {
   will-change: transform;
 }
 
-.cube-top:before {
+.heroSection .cubesContainer .cube-top:before {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#cbfeff), to(transparent)), -webkit-gradient(linear, left top, left bottom, from(var(--color-bg-top)), to(var(--color-bg-bottom)));
   background-image: linear-gradient(to bottom, #cbfeff, transparent), linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bottom));
   background-size: 2px 100%, auto;
   background-repeat: no-repeat;
 }
 
-.cube-top:after {
+.heroSection .cubesContainer .cube-top:after {
   content: "";
   display: block;
   position: absolute;
@@ -653,7 +540,7 @@ label {
   }
 }
 
-.cube-front-left {
+.heroSection .cubesContainer .cube-front-left {
   -webkit-transform-origin: left center;
           transform-origin: left center;
   -webkit-transform: rotateY(90deg);
@@ -661,7 +548,7 @@ label {
   overflow: hidden;
 }
 
-.cube-front-left:before {
+.heroSection .cubesContainer .cube-front-left:before {
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-fl-top)), to(var(--color-fl-bottom))), -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), color-stop(60%, transparent));
   background-image: linear-gradient(to bottom, var(--color-fl-top), var(--color-fl-bottom)), linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 60%);
   background-size: auto auto 1px 100%;
@@ -705,14 +592,14 @@ label {
   }
 }
 
-.cube-front-right {
+.heroSection .cubesContainer .cube-front-right {
   -webkit-transform-origin: bottom center;
           transform-origin: bottom center;
   -webkit-transform: rotateX(90deg);
           transform: rotateX(90deg);
 }
 
-.cube-front-right:before {
+.heroSection .cubesContainer .cube-front-right:before {
   background-image: -webkit-gradient(linear, left top, right top, from(var(--color-fr-top)), to(var(--color-fr-bottom)));
   background-image: linear-gradient(to right, var(--color-fr-top), var(--color-fr-bottom));
   -webkit-transform-origin: top;
@@ -754,7 +641,7 @@ label {
   }
 }
 
-.cube-bottom {
+.heroSection .cubesContainer .cube-bottom {
   -webkit-transform: translateZ(-10vmin);
           transform: translateZ(-10vmin);
   background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-bg-top)), to(var(--color-bg-bottom)));
@@ -793,7 +680,7 @@ label {
   }
 }
 
-.cube-bottom:after {
+.heroSection .cubesContainer .cube-bottom:after {
   content: "";
   display: block;
   position: absolute;
@@ -831,7 +718,7 @@ label {
   }
 }
 
-[class^="shadow"] {
+.heroSection .cubesContainer [class^="shadow"] {
   position: absolute;
   top: 0;
   left: 0;
@@ -842,11 +729,11 @@ label {
           filter: var(--shadow-filter, blur(20px));
 }
 
-[class^="shadow"], [class^="shadow"]:before {
+.heroSection .cubesContainer [class^="shadow"], .heroSection .cubesContainer [class^="shadow"]:before {
   will-change: transform;
 }
 
-[class^="shadow"]:before {
+.heroSection .cubesContainer [class^="shadow"]:before {
   content: "";
   display: block;
   position: absolute;
@@ -858,16 +745,16 @@ label {
   opacity: 0.7;
 }
 
-.shadow-y {
+.heroSection .cubesContainer .shadow-y {
   -webkit-animation: shadow-y 4s infinite both;
           animation: shadow-y 4s infinite both;
 }
 
-.shadow-y[data-cube^="11"], .shadow-y[data-cube^="21"] {
+.heroSection .cubesContainer .shadow-y[data-cube^="11"], .heroSection .cubesContainer .shadow-y[data-cube^="21"] {
   left: 10%;
 }
 
-.shadow-y[data-cube^="13"], .shadow-y[data-cube^="23"] {
+.heroSection .cubesContainer .shadow-y[data-cube^="13"], .heroSection .cubesContainer .shadow-y[data-cube^="23"] {
   left: -10%;
 }
 
@@ -901,7 +788,7 @@ label {
   }
 }
 
-.shadow-y:before {
+.heroSection .cubesContainer .shadow-y:before {
   -webkit-animation: shadow-y-inverse 4s infinite both;
           animation: shadow-y-inverse 4s infinite both;
   -webkit-transform-origin: top center;
@@ -942,7 +829,7 @@ label {
   }
 }
 
-.shadow-flip {
+.heroSection .cubesContainer .shadow-flip {
   width: 2vmin;
   height: 50%;
   top: -1vmin;
@@ -986,7 +873,7 @@ label {
   }
 }
 
-.shadow-flip:before {
+.heroSection .cubesContainer .shadow-flip:before {
   -webkit-animation: shadow-flip-inverse 4s infinite both;
           animation: shadow-flip-inverse 4s infinite both;
   -webkit-transform-origin: top center;
@@ -1028,7 +915,7 @@ label {
   }
 }
 
-.shadow-z {
+.heroSection .cubesContainer .shadow-z {
   -webkit-animation: shadow-z 4s infinite both;
           animation: shadow-z 4s infinite both;
   overflow: visible;
@@ -1037,23 +924,23 @@ label {
           transform-origin: top center;
 }
 
-.shadow-z[data-cube^="11"] {
+.heroSection .cubesContainer .shadow-z[data-cube^="11"] {
   --shadow-z-left: 50%;
   --shadow-z-top: 50%;
 }
 
-.shadow-z[data-cube^="21"], .shadow-z[data-cube^="31"] {
+.heroSection .cubesContainer .shadow-z[data-cube^="21"], .heroSection .cubesContainer .shadow-z[data-cube^="31"] {
   --shadow-z-left: 50%;
   --shadow-z-top: 0;
 }
 
-.shadow-z[data-cube^="32"] {
+.heroSection .cubesContainer .shadow-z[data-cube^="32"] {
   --shadow-z-left: 0;
   --shadow-z-top: 0;
   --shadow-x-scale: 2;
 }
 
-.shadow-z[data-cube^="33"] {
+.heroSection .cubesContainer .shadow-z[data-cube^="33"] {
   --shadow-z-left: -50%;
   --shadow-z-top: 0;
 }
@@ -1088,7 +975,7 @@ label {
   }
 }
 
-.shadow-z:before {
+.heroSection .cubesContainer .shadow-z:before {
   -webkit-animation: shadow-z-inverse 4s infinite both;
           animation: shadow-z-inverse 4s infinite both;
 }
@@ -1145,516 +1032,912 @@ label {
   }
 }
 
-.cube[data-cube="111"] > .cube-wrap, .cube[data-cube="111"] > .cube-wrap:before, .cube[data-cube="111"] > .cube-wrap:after,
-.cube[data-cube="111"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="111"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="111"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 77ms;
-          animation-delay: 77ms;
+.heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 115ms;
+          animation-delay: 115ms;
 }
 
-.cube[data-cube="111"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 77ms;
-          animation-delay: 77ms;
+.heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 115ms;
+          animation-delay: 115ms;
 }
 
-[class^="shadow-"][data-cube="111"]:before,
-.large-shadow[data-cube="111"] {
-  -webkit-animation-delay: 77ms;
-          animation-delay: 77ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="111"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="111"] {
+  -webkit-animation-delay: 115ms;
+          animation-delay: 115ms;
 }
 
-.cube[data-cube="112"] > .cube-wrap, .cube[data-cube="112"] > .cube-wrap:before, .cube[data-cube="112"] > .cube-wrap:after,
-.cube[data-cube="112"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="112"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="112"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 141ms;
-          animation-delay: 141ms;
+.heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 69ms;
+          animation-delay: 69ms;
 }
 
-.cube[data-cube="112"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 141ms;
-          animation-delay: 141ms;
+.heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 69ms;
+          animation-delay: 69ms;
 }
 
-[class^="shadow-"][data-cube="112"]:before,
-.large-shadow[data-cube="112"] {
-  -webkit-animation-delay: 141ms;
-          animation-delay: 141ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="112"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="112"] {
+  -webkit-animation-delay: 69ms;
+          animation-delay: 69ms;
 }
 
-.cube[data-cube="113"] > .cube-wrap, .cube[data-cube="113"] > .cube-wrap:before, .cube[data-cube="113"] > .cube-wrap:after,
-.cube[data-cube="113"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="113"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="113"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 57ms;
-          animation-delay: 57ms;
+.heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 54ms;
+          animation-delay: 54ms;
 }
 
-.cube[data-cube="113"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 57ms;
-          animation-delay: 57ms;
+.heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 54ms;
+          animation-delay: 54ms;
 }
 
-[class^="shadow-"][data-cube="113"]:before,
-.large-shadow[data-cube="113"] {
-  -webkit-animation-delay: 57ms;
-          animation-delay: 57ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="113"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="113"] {
+  -webkit-animation-delay: 54ms;
+          animation-delay: 54ms;
 }
 
-.cube[data-cube="121"] > .cube-wrap, .cube[data-cube="121"] > .cube-wrap:before, .cube[data-cube="121"] > .cube-wrap:after,
-.cube[data-cube="121"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="121"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="121"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 65ms;
-          animation-delay: 65ms;
+.heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 19ms;
+          animation-delay: 19ms;
 }
 
-.cube[data-cube="121"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 65ms;
-          animation-delay: 65ms;
+.heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 19ms;
+          animation-delay: 19ms;
 }
 
-[class^="shadow-"][data-cube="121"]:before,
-.large-shadow[data-cube="121"] {
-  -webkit-animation-delay: 65ms;
-          animation-delay: 65ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="121"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="121"] {
+  -webkit-animation-delay: 19ms;
+          animation-delay: 19ms;
 }
 
-.cube[data-cube="122"] > .cube-wrap, .cube[data-cube="122"] > .cube-wrap:before, .cube[data-cube="122"] > .cube-wrap:after,
-.cube[data-cube="122"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="122"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="122"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 75ms;
-          animation-delay: 75ms;
+.heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 158ms;
+          animation-delay: 158ms;
 }
 
-.cube[data-cube="122"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 75ms;
-          animation-delay: 75ms;
+.heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 158ms;
+          animation-delay: 158ms;
 }
 
-[class^="shadow-"][data-cube="122"]:before,
-.large-shadow[data-cube="122"] {
-  -webkit-animation-delay: 75ms;
-          animation-delay: 75ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="122"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="122"] {
+  -webkit-animation-delay: 158ms;
+          animation-delay: 158ms;
 }
 
-.cube[data-cube="123"] > .cube-wrap, .cube[data-cube="123"] > .cube-wrap:before, .cube[data-cube="123"] > .cube-wrap:after,
-.cube[data-cube="123"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="123"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="123"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 184ms;
-          animation-delay: 184ms;
+.heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
 }
 
-.cube[data-cube="123"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 184ms;
-          animation-delay: 184ms;
+.heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
 }
 
-[class^="shadow-"][data-cube="123"]:before,
-.large-shadow[data-cube="123"] {
-  -webkit-animation-delay: 184ms;
-          animation-delay: 184ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="123"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="123"] {
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
 }
 
-.cube[data-cube="131"] > .cube-wrap, .cube[data-cube="131"] > .cube-wrap:before, .cube[data-cube="131"] > .cube-wrap:after,
-.cube[data-cube="131"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="131"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="131"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 215ms;
-          animation-delay: 215ms;
+.heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 158ms;
+          animation-delay: 158ms;
 }
 
-.cube[data-cube="131"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 215ms;
-          animation-delay: 215ms;
+.heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 158ms;
+          animation-delay: 158ms;
 }
 
-[class^="shadow-"][data-cube="131"]:before,
-.large-shadow[data-cube="131"] {
-  -webkit-animation-delay: 215ms;
-          animation-delay: 215ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="131"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="131"] {
+  -webkit-animation-delay: 158ms;
+          animation-delay: 158ms;
 }
 
-.cube[data-cube="132"] > .cube-wrap, .cube[data-cube="132"] > .cube-wrap:before, .cube[data-cube="132"] > .cube-wrap:after,
-.cube[data-cube="132"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="132"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="132"] > .cube-wrap > [class^="cube-"]:after {
+.heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 112ms;
+          animation-delay: 112ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 112ms;
+          animation-delay: 112ms;
+}
+
+.heroSection .cubesContainer [class^="shadow-"][data-cube="132"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="132"] {
+  -webkit-animation-delay: 112ms;
+          animation-delay: 112ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 19ms;
+          animation-delay: 19ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 19ms;
+          animation-delay: 19ms;
+}
+
+.heroSection .cubesContainer [class^="shadow-"][data-cube="133"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="133"] {
+  -webkit-animation-delay: 19ms;
+          animation-delay: 19ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 126ms;
+          animation-delay: 126ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 126ms;
+          animation-delay: 126ms;
+}
+
+.heroSection .cubesContainer [class^="shadow-"][data-cube="211"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="211"] {
+  -webkit-animation-delay: 126ms;
+          animation-delay: 126ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
+}
+
+.heroSection .cubesContainer [class^="shadow-"][data-cube="212"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="212"] {
+  -webkit-animation-delay: 220ms;
+          animation-delay: 220ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 160ms;
+          animation-delay: 160ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 160ms;
+          animation-delay: 160ms;
+}
+
+.heroSection .cubesContainer [class^="shadow-"][data-cube="213"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="213"] {
+  -webkit-animation-delay: 160ms;
+          animation-delay: 160ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 91ms;
+          animation-delay: 91ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 91ms;
+          animation-delay: 91ms;
+}
+
+.heroSection .cubesContainer [class^="shadow-"][data-cube="221"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="221"] {
+  -webkit-animation-delay: 91ms;
+          animation-delay: 91ms;
+}
+
+.heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap > [class^="cube-"]:after {
   -webkit-animation-delay: 144ms;
           animation-delay: 144ms;
 }
 
-.cube[data-cube="132"] > .cube-wrap [class^="shadow-"] {
+.heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap [class^="shadow-"] {
   -webkit-animation-delay: 144ms;
           animation-delay: 144ms;
 }
 
-[class^="shadow-"][data-cube="132"]:before,
-.large-shadow[data-cube="132"] {
+.heroSection .cubesContainer [class^="shadow-"][data-cube="222"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="222"] {
   -webkit-animation-delay: 144ms;
           animation-delay: 144ms;
 }
 
-.cube[data-cube="133"] > .cube-wrap, .cube[data-cube="133"] > .cube-wrap:before, .cube[data-cube="133"] > .cube-wrap:after,
-.cube[data-cube="133"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="133"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="133"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 194ms;
-          animation-delay: 194ms;
+.heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 274ms;
+          animation-delay: 274ms;
 }
 
-.cube[data-cube="133"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 194ms;
-          animation-delay: 194ms;
+.heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 274ms;
+          animation-delay: 274ms;
 }
 
-[class^="shadow-"][data-cube="133"]:before,
-.large-shadow[data-cube="133"] {
-  -webkit-animation-delay: 194ms;
-          animation-delay: 194ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="223"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="223"] {
+  -webkit-animation-delay: 274ms;
+          animation-delay: 274ms;
 }
 
-.cube[data-cube="211"] > .cube-wrap, .cube[data-cube="211"] > .cube-wrap:before, .cube[data-cube="211"] > .cube-wrap:after,
-.cube[data-cube="211"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="211"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="211"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 74ms;
-          animation-delay: 74ms;
+.heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 40ms;
+          animation-delay: 40ms;
 }
 
-.cube[data-cube="211"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 74ms;
-          animation-delay: 74ms;
+.heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 40ms;
+          animation-delay: 40ms;
 }
 
-[class^="shadow-"][data-cube="211"]:before,
-.large-shadow[data-cube="211"] {
-  -webkit-animation-delay: 74ms;
-          animation-delay: 74ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="231"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="231"] {
+  -webkit-animation-delay: 40ms;
+          animation-delay: 40ms;
 }
 
-.cube[data-cube="212"] > .cube-wrap, .cube[data-cube="212"] > .cube-wrap:before, .cube[data-cube="212"] > .cube-wrap:after,
-.cube[data-cube="212"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="212"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="212"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 29ms;
-          animation-delay: 29ms;
+.heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 288ms;
+          animation-delay: 288ms;
 }
 
-.cube[data-cube="212"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 29ms;
-          animation-delay: 29ms;
+.heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 288ms;
+          animation-delay: 288ms;
 }
 
-[class^="shadow-"][data-cube="212"]:before,
-.large-shadow[data-cube="212"] {
-  -webkit-animation-delay: 29ms;
-          animation-delay: 29ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="232"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="232"] {
+  -webkit-animation-delay: 288ms;
+          animation-delay: 288ms;
 }
 
-.cube[data-cube="213"] > .cube-wrap, .cube[data-cube="213"] > .cube-wrap:before, .cube[data-cube="213"] > .cube-wrap:after,
-.cube[data-cube="213"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="213"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="213"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 11ms;
-          animation-delay: 11ms;
+.heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 96ms;
+          animation-delay: 96ms;
 }
 
-.cube[data-cube="213"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 11ms;
-          animation-delay: 11ms;
+.heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 96ms;
+          animation-delay: 96ms;
 }
 
-[class^="shadow-"][data-cube="213"]:before,
-.large-shadow[data-cube="213"] {
-  -webkit-animation-delay: 11ms;
-          animation-delay: 11ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="233"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="233"] {
+  -webkit-animation-delay: 96ms;
+          animation-delay: 96ms;
 }
 
-.cube[data-cube="221"] > .cube-wrap, .cube[data-cube="221"] > .cube-wrap:before, .cube[data-cube="221"] > .cube-wrap:after,
-.cube[data-cube="221"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="221"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="221"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 6ms;
-          animation-delay: 6ms;
+.heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 124ms;
+          animation-delay: 124ms;
 }
 
-.cube[data-cube="221"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 6ms;
-          animation-delay: 6ms;
+.heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 124ms;
+          animation-delay: 124ms;
 }
 
-[class^="shadow-"][data-cube="221"]:before,
-.large-shadow[data-cube="221"] {
-  -webkit-animation-delay: 6ms;
-          animation-delay: 6ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="311"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="311"] {
+  -webkit-animation-delay: 124ms;
+          animation-delay: 124ms;
 }
 
-.cube[data-cube="222"] > .cube-wrap, .cube[data-cube="222"] > .cube-wrap:before, .cube[data-cube="222"] > .cube-wrap:after,
-.cube[data-cube="222"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="222"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="222"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 244ms;
-          animation-delay: 244ms;
+.heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 172ms;
+          animation-delay: 172ms;
 }
 
-.cube[data-cube="222"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 244ms;
-          animation-delay: 244ms;
+.heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 172ms;
+          animation-delay: 172ms;
 }
 
-[class^="shadow-"][data-cube="222"]:before,
-.large-shadow[data-cube="222"] {
-  -webkit-animation-delay: 244ms;
-          animation-delay: 244ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="312"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="312"] {
+  -webkit-animation-delay: 172ms;
+          animation-delay: 172ms;
 }
 
-.cube[data-cube="223"] > .cube-wrap, .cube[data-cube="223"] > .cube-wrap:before, .cube[data-cube="223"] > .cube-wrap:after,
-.cube[data-cube="223"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="223"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="223"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 104ms;
-          animation-delay: 104ms;
+.heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 28ms;
+          animation-delay: 28ms;
 }
 
-.cube[data-cube="223"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 104ms;
-          animation-delay: 104ms;
+.heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 28ms;
+          animation-delay: 28ms;
 }
 
-[class^="shadow-"][data-cube="223"]:before,
-.large-shadow[data-cube="223"] {
-  -webkit-animation-delay: 104ms;
-          animation-delay: 104ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="313"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="313"] {
+  -webkit-animation-delay: 28ms;
+          animation-delay: 28ms;
 }
 
-.cube[data-cube="231"] > .cube-wrap, .cube[data-cube="231"] > .cube-wrap:before, .cube[data-cube="231"] > .cube-wrap:after,
-.cube[data-cube="231"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="231"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="231"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 231ms;
-          animation-delay: 231ms;
+.heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 218ms;
+          animation-delay: 218ms;
 }
 
-.cube[data-cube="231"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 231ms;
-          animation-delay: 231ms;
+.heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 218ms;
+          animation-delay: 218ms;
 }
 
-[class^="shadow-"][data-cube="231"]:before,
-.large-shadow[data-cube="231"] {
-  -webkit-animation-delay: 231ms;
-          animation-delay: 231ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="321"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="321"] {
+  -webkit-animation-delay: 218ms;
+          animation-delay: 218ms;
 }
 
-.cube[data-cube="232"] > .cube-wrap, .cube[data-cube="232"] > .cube-wrap:before, .cube[data-cube="232"] > .cube-wrap:after,
-.cube[data-cube="232"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="232"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="232"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 108ms;
-          animation-delay: 108ms;
+.heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 16ms;
+          animation-delay: 16ms;
 }
 
-.cube[data-cube="232"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 108ms;
-          animation-delay: 108ms;
+.heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 16ms;
+          animation-delay: 16ms;
 }
 
-[class^="shadow-"][data-cube="232"]:before,
-.large-shadow[data-cube="232"] {
-  -webkit-animation-delay: 108ms;
-          animation-delay: 108ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="322"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="322"] {
+  -webkit-animation-delay: 16ms;
+          animation-delay: 16ms;
 }
 
-.cube[data-cube="233"] > .cube-wrap, .cube[data-cube="233"] > .cube-wrap:before, .cube[data-cube="233"] > .cube-wrap:after,
-.cube[data-cube="233"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="233"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="233"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 164ms;
-          animation-delay: 164ms;
+.heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 272ms;
+          animation-delay: 272ms;
 }
 
-.cube[data-cube="233"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 164ms;
-          animation-delay: 164ms;
+.heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 272ms;
+          animation-delay: 272ms;
 }
 
-[class^="shadow-"][data-cube="233"]:before,
-.large-shadow[data-cube="233"] {
-  -webkit-animation-delay: 164ms;
-          animation-delay: 164ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="323"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="323"] {
+  -webkit-animation-delay: 272ms;
+          animation-delay: 272ms;
 }
 
-.cube[data-cube="311"] > .cube-wrap, .cube[data-cube="311"] > .cube-wrap:before, .cube[data-cube="311"] > .cube-wrap:after,
-.cube[data-cube="311"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="311"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="311"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 254ms;
-          animation-delay: 254ms;
+.heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 12ms;
+          animation-delay: 12ms;
 }
 
-.cube[data-cube="311"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 254ms;
-          animation-delay: 254ms;
+.heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 12ms;
+          animation-delay: 12ms;
 }
 
-[class^="shadow-"][data-cube="311"]:before,
-.large-shadow[data-cube="311"] {
-  -webkit-animation-delay: 254ms;
-          animation-delay: 254ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="331"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="331"] {
+  -webkit-animation-delay: 12ms;
+          animation-delay: 12ms;
 }
 
-.cube[data-cube="312"] > .cube-wrap, .cube[data-cube="312"] > .cube-wrap:before, .cube[data-cube="312"] > .cube-wrap:after,
-.cube[data-cube="312"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="312"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="312"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 163ms;
-          animation-delay: 163ms;
+.heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 49ms;
+          animation-delay: 49ms;
 }
 
-.cube[data-cube="312"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 163ms;
-          animation-delay: 163ms;
+.heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 49ms;
+          animation-delay: 49ms;
 }
 
-[class^="shadow-"][data-cube="312"]:before,
-.large-shadow[data-cube="312"] {
-  -webkit-animation-delay: 163ms;
-          animation-delay: 163ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="332"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="332"] {
+  -webkit-animation-delay: 49ms;
+          animation-delay: 49ms;
 }
 
-.cube[data-cube="313"] > .cube-wrap, .cube[data-cube="313"] > .cube-wrap:before, .cube[data-cube="313"] > .cube-wrap:after,
-.cube[data-cube="313"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="313"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="313"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 297ms;
-          animation-delay: 297ms;
+.heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap:after,
+.heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap > [class^="cube-"],
+.heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap > [class^="cube-"]:before,
+.heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap > [class^="cube-"]:after {
+  -webkit-animation-delay: 121ms;
+          animation-delay: 121ms;
 }
 
-.cube[data-cube="313"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 297ms;
-          animation-delay: 297ms;
+.heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap [class^="shadow-"] {
+  -webkit-animation-delay: 121ms;
+          animation-delay: 121ms;
 }
 
-[class^="shadow-"][data-cube="313"]:before,
-.large-shadow[data-cube="313"] {
-  -webkit-animation-delay: 297ms;
-          animation-delay: 297ms;
+.heroSection .cubesContainer [class^="shadow-"][data-cube="333"]:before,
+.heroSection .cubesContainer .large-shadow[data-cube="333"] {
+  -webkit-animation-delay: 121ms;
+          animation-delay: 121ms;
 }
 
-.cube[data-cube="321"] > .cube-wrap, .cube[data-cube="321"] > .cube-wrap:before, .cube[data-cube="321"] > .cube-wrap:after,
-.cube[data-cube="321"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="321"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="321"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 223ms;
-          animation-delay: 223ms;
+.heroSection .content {
+  width: 60%;
+  min-width: 950px;
+  padding: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
 }
 
-.cube[data-cube="321"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 223ms;
-          animation-delay: 223ms;
+.heroSection .content .wrapper {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-[class^="shadow-"][data-cube="321"]:before,
-.large-shadow[data-cube="321"] {
-  -webkit-animation-delay: 223ms;
-          animation-delay: 223ms;
+.heroSection .content .wrapper span {
+  font-size: 84px;
+  font-weight: 900;
 }
 
-.cube[data-cube="322"] > .cube-wrap, .cube[data-cube="322"] > .cube-wrap:before, .cube[data-cube="322"] > .cube-wrap:after,
-.cube[data-cube="322"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="322"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="322"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 31ms;
-          animation-delay: 31ms;
+.heroSection .content .wrapper .highlight {
+  position: absolute;
+  left: -0.5rem;
+  color: #3d93a9;
 }
 
-.cube[data-cube="322"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 31ms;
-          animation-delay: 31ms;
+.heroSection .content .cover {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 84px;
+  width: 100%;
+  height: 100%;
+  font-weight: 100;
+  color: rgba(61, 147, 169, 0);
+  background: #010101;
+  -webkit-animation: typing 3s steps(10) forwards;
+          animation: typing 3s steps(10) forwards;
 }
 
-[class^="shadow-"][data-cube="322"]:before,
-.large-shadow[data-cube="322"] {
-  -webkit-animation-delay: 31ms;
-          animation-delay: 31ms;
+@-webkit-keyframes typing {
+  0% {
+    color: #c72b2b;
+    width: 100%;
+  }
+  100% {
+  }
+  to {
+    width: 0;
+  }
 }
 
-.cube[data-cube="323"] > .cube-wrap, .cube[data-cube="323"] > .cube-wrap:before, .cube[data-cube="323"] > .cube-wrap:after,
-.cube[data-cube="323"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="323"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="323"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 239ms;
-          animation-delay: 239ms;
+@keyframes typing {
+  0% {
+    color: #c72b2b;
+    width: 100%;
+  }
+  100% {
+  }
+  to {
+    width: 0;
+  }
 }
 
-.cube[data-cube="323"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 239ms;
-          animation-delay: 239ms;
+@-webkit-keyframes caret {
+  50% {
+    color: transparent;
+  }
 }
 
-[class^="shadow-"][data-cube="323"]:before,
-.large-shadow[data-cube="323"] {
-  -webkit-animation-delay: 239ms;
-          animation-delay: 239ms;
+@keyframes caret {
+  50% {
+    color: transparent;
+  }
 }
 
-.cube[data-cube="331"] > .cube-wrap, .cube[data-cube="331"] > .cube-wrap:before, .cube[data-cube="331"] > .cube-wrap:after,
-.cube[data-cube="331"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="331"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="331"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 118ms;
-          animation-delay: 118ms;
+.heroSection .content h1 {
+  line-height: 1.3;
+  position: relative;
+  margin: 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 1rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.cube[data-cube="331"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 118ms;
-          animation-delay: 118ms;
+.heroSection .content h1 .word {
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-[class^="shadow-"][data-cube="331"]:before,
-.large-shadow[data-cube="331"] {
-  -webkit-animation-delay: 118ms;
-          animation-delay: 118ms;
+.heroSection .content h1 .word .letter {
+  font-size: 84px;
+  font-weight: 700;
+  -webkit-transition: color 0.5s steps(4, jump-both);
+  transition: color 0.5s steps(4, jump-both);
 }
 
-.cube[data-cube="332"] > .cube-wrap, .cube[data-cube="332"] > .cube-wrap:before, .cube[data-cube="332"] > .cube-wrap:after,
-.cube[data-cube="332"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="332"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="332"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 196ms;
-          animation-delay: 196ms;
+.heroSection .content h1 .word .letter:hover {
+  color: #3d93a9;
+  -webkit-animation: bounce 800ms ease-out;
+          animation: bounce 800ms ease-out;
 }
 
-.cube[data-cube="332"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 196ms;
-          animation-delay: 196ms;
+@-webkit-keyframes bounce {
+  0%,
+  1%,
+  21%,
+  41%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  11% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  31% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
 }
 
-[class^="shadow-"][data-cube="332"]:before,
-.large-shadow[data-cube="332"] {
-  -webkit-animation-delay: 196ms;
-          animation-delay: 196ms;
+@keyframes bounce {
+  0%,
+  1%,
+  21%,
+  41%,
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  11% {
+    -webkit-transform: translateY(-30px);
+            transform: translateY(-30px);
+  }
+  31% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+  }
 }
 
-.cube[data-cube="333"] > .cube-wrap, .cube[data-cube="333"] > .cube-wrap:before, .cube[data-cube="333"] > .cube-wrap:after,
-.cube[data-cube="333"] > .cube-wrap > [class^="cube-"],
-.cube[data-cube="333"] > .cube-wrap > [class^="cube-"]:before,
-.cube[data-cube="333"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 34ms;
-          animation-delay: 34ms;
+.heroSection .content h1 .before {
+  content: "<h1>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  top: -1rem;
+  font-weight: 400;
+  z-index: 20;
+  color: #585858;
+  left: 0;
 }
 
-.cube[data-cube="333"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 34ms;
-          animation-delay: 34ms;
+.heroSection .content h1 .after {
+  z-index: 20;
+  content: "</h1>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  bottom: -1rem;
+  font-weight: 400;
+  color: #585858;
+  left: 0;
 }
 
-[class^="shadow-"][data-cube="333"]:before,
-.large-shadow[data-cube="333"] {
-  -webkit-animation-delay: 34ms;
-          animation-delay: 34ms;
+.heroSection .content .line1 .cover {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
+.heroSection .content .line2 .cover {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+.heroSection .content .line3 .cover {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+}
+
+.heroSection .content p {
+  margin: 3rem 0.5rem 5rem;
+  line-height: 1.5;
+  font-size: 56px;
+  padding-left: 1rem;
+  font-weight: 500;
+  position: relative;
+  letter-spacing: -5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.heroSection .content p .cover {
+  font-size: 56px;
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  -webkit-animation-duration: 3s;
+  animation-duration: 3s;
+  height: 100%;
+}
+
+.heroSection .content p .letter {
+  -webkit-transition: color 0.5s steps(4, jump-both);
+  transition: color 0.5s steps(4, jump-both);
+}
+
+.heroSection .content p .letter:hover {
+  color: #3d93a9;
+}
+
+.heroSection .content p::before {
+  content: "<p>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  top: -1rem;
+  font-weight: 400;
+  font-size: 24px;
+  color: #585858;
+  letter-spacing: 1px;
+  left: 0;
+  z-index: 20;
+}
+
+.heroSection .content p::after {
+  z-index: 20;
+  letter-spacing: 1px;
+  content: "</p>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  bottom: -1rem;
+  font-weight: 400;
+  font-size: 24px;
+  color: #585858;
+  left: 0;
+}
+
+.aboutUsSection {
+  width: 90%;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 2rem 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.aboutUsSection .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.aboutUsSection .content .desc {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.aboutUsSection .content .desc p {
+  margin: 0.5rem auto;
+  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  text-align: start;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.aboutUsSection .content .text-sphere .tagcloud {
+  width: 100% !important;
+  height: 100% !important;
+  color: red;
+}
+
+.skillsSection {
+  height: 100vh;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 2rem 1rem;
+}
+
+.skillsSection .skills {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  width: 90%;
+  margin: auto;
+}
+
+.skillsSection .skills .skill {
+  width: 100%;
+  height: 250px;
+  -webkit-box-shadow: 0 0 10px white;
+          box-shadow: 0 0 10px white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 8px;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  gap: 1.5rem;
+}
+
+.skillsSection .skills .skill i {
+  color: gray;
+  font-size: 56px;
+}
+
+.skillsSection .skills .skill h3,
+.skillsSection .skills .skill p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.skillsSection .skills .skill p {
+  font-size: 16px;
+}
+
+.skillsSection .skills .skill .progressOuter {
+  width: 90%;
+  height: 5px;
+  border-radius: 6px;
+  border: 1px solid gray;
+  margin: 0 auto;
+  background: gray;
+  padding: 0;
+}
+
+.skillsSection .skills .skill .progressOuter .inner {
+  padding: 0;
+  height: 100%;
+  border-radius: 6px;
+  margin: 0;
+  width: 0%;
+  background-color: red;
+}
+
+.skillsSection .skills .skill .progressOuter .inner1 {
+  width: 80%;
+}
+
+.skillsSection .skills .skill .progressOuter .inner2 {
+  width: 60%;
+}
+
+.skillsSection .skills .skill .progressOuter .inner3 {
+  width: 100%;
+}
+
+.skillsSection .skills .skill .progressOuter .inner4 {
+  width: 90%;
+}
+
+.skillsSection .skills .skill .progressOuter .inner5 {
+  width: 70%;
 }
 /*# sourceMappingURL=home.css.map */
