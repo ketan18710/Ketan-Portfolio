@@ -22,6 +22,35 @@
       src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"
     ></script>
     <script defer src="./text-sphere.js"></script>
+    <script defer>
+      window.addEventListener("load", (event) => {
+        const cards = document.querySelectorAll(".watchSec");
+        cards.forEach((card) => addInterSectionObserver(card));
+      });
+      const addInterSectionObserver = (element) => {
+        var observer = new IntersectionObserver(
+          function (entries) {
+            if (entries[0].isIntersecting === true) {
+              var cover = document.createElement("div");
+              cover.classList.add("cover");
+              const sectionTitleWrapper = element.querySelector(
+                ".sectionTitleWrapper"
+              );
+              sectionTitleWrapper.appendChild(cover);
+              sectionTitleWrapper.classList.add("cardEntered");
+              if (element.classList.contains("skillsSection")) {
+                element.querySelector(".skills").classList.add("entered");
+              }
+              if (element.classList.contains("aboutUsSection")) {
+                element.querySelector(".desc").classList.add("entered");
+              }
+            }
+          },
+          { threshold: [0.01] }
+        );
+        observer.observe(element);
+      };
+    </script>
   </head>
   <body>
     <!-- <input type="checkbox" id="shadows" checked /><label for="shadows">Soft shadows</label> -->
@@ -76,10 +105,10 @@
           <div class="cover">!</div>
         </h1>
         <p>
-          <span class="letter">M</span>
-          <span class="letter">E</span>
-          <span class="letter">R</span>
-          <span class="letter">N</span>
+          <span class="letter">F</span>
+          <span class="letter">u</span>
+          <span class="letter">l</span>
+          <span class="letter">l</span>
           &nbsp;&nbsp;
           <span class="letter">S</span>
           <span class="letter">t</span>
@@ -470,8 +499,11 @@
         <i class="bx bx-chevrons-down"></i>
       </p>
     </section>
-    <section class="aboutUsSection">
-      <h2 class="sectionTitle">Me, Myself and I</h2>
+    <section class="aboutUsSection watchSec">
+      <div class="sectionTitleWrapper">
+        <h2 class="sectionTitle">Me, Myself and I</h2>
+        <!-- <div class="cover"></div> -->
+      </div>
       <div class="content">
         <div class="desc">
           <p>
@@ -493,38 +525,74 @@
         <div class="text-sphere"></div>
       </div>
     </section>
-    <section class="skillsSection">
-      <h2 class="sectionTitle">My Skills</h2>
+    <section class="skillsSection watchSec">
+      <div class="sectionTitleWrapper">
+        <h2 class="sectionTitle">My Skills</h2>
+        <!-- <div class="cover"></div> -->
+      </div>
       <div class="skills">
         <div class="skill">
           <i class="bx bxl-react"></i>
-          <h3 class="sub-title">React JS</h3>
-          <p>3 years</p>
+          <div>
+            <h3 class="sub-title">React JS</h3>
+            <p>(3 years)</p>
+          </div>
           <div class="progressOuter"><div class="inner inner1"></div></div>
         </div>
         <div class="skill">
           <i class="bx bxl-nodejs"></i>
-          <h3 class="sub-title">Node JS</h3>
+          <div>
+            <h3 class="sub-title">Node JS</h3>
+            <p>(2 years)</p>
+          </div>
           <div class="progressOuter"><div class="inner inner2"></div></div>
         </div>
         <div class="skill">
+          <i class="bx bxl-php"></i>
+          <div>
+            <h3 class="sub-title">PHP</h3>
+            <p>(1 year)</p>
+          </div>
+          <div class="progressOuter"><div class="inner inner7"></div></div>
+        </div>
+        <div class="skill">
           <i class="bx bxl-html5"></i>
-          <h3 class="sub-title">HTML</h3>
+          <div>
+            <h3 class="sub-title">HTML</h3>
+            <p>(5 years)</p>
+          </div>
           <div class="progressOuter"><div class="inner inner3"></div></div>
         </div>
         <div class="skill">
           <i class="bx bxl-css3"></i>
-          <h3 class="sub-title">CSS</h3>
+          <div>
+            <h3 class="sub-title">CSS</h3>
+            <p>(5 years)</p>
+          </div>
           <div class="progressOuter"><div class="inner inner4"></div></div>
         </div>
         <div class="skill">
           <i class="bx bxl-javascript"></i>
-          <h3 class="sub-title">Javascript</h3>
+          <div>
+            <h3 class="sub-title">Javascript</h3>
+            <p>(4 years)</p>
+          </div>
           <div class="progressOuter"><div class="inner inner5"></div></div>
         </div>
         <div class="skill">
           <i class="bx bx-data"></i>
-          <h3 class="sub-title">MySQL</h3>
+          <div>
+            <h3 class="sub-title">MongoDB</h3>
+            <p>(2 years)</p>
+          </div>
+          <div class="progressOuter"><div class="inner inner6"></div></div>
+        </div>
+        <div class="skill">
+          <i class="bx bx-data"></i>
+          <div>
+            <h3 class="sub-title">MySQL</h3>
+            <p>(2 years)</p>
+          </div>
           <div class="progressOuter"><div class="inner inner6"></div></div>
         </div>
       </div>

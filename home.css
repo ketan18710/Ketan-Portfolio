@@ -76,15 +76,102 @@ body {
           animation-timing-function: cubic-bezier(0.5, 0, 0, 1) !important;
 }
 
-.sectionTitle {
+.sectionTitleWrapper {
+  position: relative;
+}
+
+.sectionTitleWrapper .sectionTitle {
   font-size: 56px;
-  line-height: 1.3;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.9);
   width: 100%;
-  text-align: center;
+  padding-left: 1rem;
+  text-align: start;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
+  opacity: 0;
+}
+
+.sectionTitleWrapper .sectionTitle::before {
+  content: "<h1>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  top: -1rem;
+  font-weight: 400;
+  font-size: 24px;
+  z-index: 20;
+  color: #585858;
+  left: 0;
+}
+
+.sectionTitleWrapper .sectionTitle::after {
+  z-index: 20;
+  font-size: 24px;
+  content: "</h1>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  bottom: -1rem;
+  font-weight: 400;
+  color: #585858;
+  left: 0;
+}
+
+.sectionTitleWrapper .cover {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 84px;
+  width: 100%;
+  height: 100%;
+  font-weight: 100;
+  color: rgba(61, 147, 169, 0);
+  background: #010101;
+  -webkit-animation: typing 3s steps(10) forwards;
+          animation: typing 3s steps(10) forwards;
+}
+
+@-webkit-keyframes typing {
+  0% {
+    color: #c72b2b;
+    width: 100%;
+  }
+  100% {
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes typing {
+  0% {
+    color: #c72b2b;
+    width: 100%;
+  }
+  100% {
+  }
+  to {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes caret {
+  50% {
+    color: transparent;
+  }
+}
+
+@keyframes caret {
+  50% {
+    color: transparent;
+  }
+}
+
+.sectionTitleWrapper.cardEntered .sectionTitle {
+  opacity: 1;
 }
 
 .heroSection {
@@ -1036,513 +1123,513 @@ body {
 .heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 233ms;
-          animation-delay: 233ms;
+  -webkit-animation-delay: 31ms;
+          animation-delay: 31ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="111"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 233ms;
-          animation-delay: 233ms;
+  -webkit-animation-delay: 31ms;
+          animation-delay: 31ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="111"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="111"] {
-  -webkit-animation-delay: 233ms;
-          animation-delay: 233ms;
+  -webkit-animation-delay: 31ms;
+          animation-delay: 31ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 197ms;
-          animation-delay: 197ms;
+  -webkit-animation-delay: 292ms;
+          animation-delay: 292ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="112"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 197ms;
-          animation-delay: 197ms;
+  -webkit-animation-delay: 292ms;
+          animation-delay: 292ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="112"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="112"] {
-  -webkit-animation-delay: 197ms;
-          animation-delay: 197ms;
+  -webkit-animation-delay: 292ms;
+          animation-delay: 292ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 179ms;
-          animation-delay: 179ms;
+  -webkit-animation-delay: 49ms;
+          animation-delay: 49ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="113"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 179ms;
-          animation-delay: 179ms;
+  -webkit-animation-delay: 49ms;
+          animation-delay: 49ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="113"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="113"] {
-  -webkit-animation-delay: 179ms;
-          animation-delay: 179ms;
+  -webkit-animation-delay: 49ms;
+          animation-delay: 49ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 242ms;
-          animation-delay: 242ms;
+  -webkit-animation-delay: 166ms;
+          animation-delay: 166ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="121"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 242ms;
-          animation-delay: 242ms;
+  -webkit-animation-delay: 166ms;
+          animation-delay: 166ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="121"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="121"] {
-  -webkit-animation-delay: 242ms;
-          animation-delay: 242ms;
+  -webkit-animation-delay: 166ms;
+          animation-delay: 166ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 19ms;
-          animation-delay: 19ms;
+  -webkit-animation-delay: 225ms;
+          animation-delay: 225ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="122"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 19ms;
-          animation-delay: 19ms;
+  -webkit-animation-delay: 225ms;
+          animation-delay: 225ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="122"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="122"] {
-  -webkit-animation-delay: 19ms;
-          animation-delay: 19ms;
+  -webkit-animation-delay: 225ms;
+          animation-delay: 225ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 255ms;
-          animation-delay: 255ms;
+  -webkit-animation-delay: 176ms;
+          animation-delay: 176ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="123"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 255ms;
-          animation-delay: 255ms;
+  -webkit-animation-delay: 176ms;
+          animation-delay: 176ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="123"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="123"] {
-  -webkit-animation-delay: 255ms;
-          animation-delay: 255ms;
+  -webkit-animation-delay: 176ms;
+          animation-delay: 176ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 241ms;
-          animation-delay: 241ms;
+  -webkit-animation-delay: 130ms;
+          animation-delay: 130ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="131"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 241ms;
-          animation-delay: 241ms;
+  -webkit-animation-delay: 130ms;
+          animation-delay: 130ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="131"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="131"] {
-  -webkit-animation-delay: 241ms;
-          animation-delay: 241ms;
+  -webkit-animation-delay: 130ms;
+          animation-delay: 130ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 201ms;
-          animation-delay: 201ms;
+  -webkit-animation-delay: 79ms;
+          animation-delay: 79ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="132"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 201ms;
-          animation-delay: 201ms;
+  -webkit-animation-delay: 79ms;
+          animation-delay: 79ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="132"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="132"] {
-  -webkit-animation-delay: 201ms;
-          animation-delay: 201ms;
+  -webkit-animation-delay: 79ms;
+          animation-delay: 79ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 164ms;
-          animation-delay: 164ms;
+  -webkit-animation-delay: 191ms;
+          animation-delay: 191ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="133"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 164ms;
-          animation-delay: 164ms;
+  -webkit-animation-delay: 191ms;
+          animation-delay: 191ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="133"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="133"] {
-  -webkit-animation-delay: 164ms;
-          animation-delay: 164ms;
+  -webkit-animation-delay: 191ms;
+          animation-delay: 191ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 25ms;
-          animation-delay: 25ms;
+  -webkit-animation-delay: 196ms;
+          animation-delay: 196ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="211"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 25ms;
-          animation-delay: 25ms;
+  -webkit-animation-delay: 196ms;
+          animation-delay: 196ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="211"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="211"] {
-  -webkit-animation-delay: 25ms;
-          animation-delay: 25ms;
+  -webkit-animation-delay: 196ms;
+          animation-delay: 196ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 172ms;
-          animation-delay: 172ms;
+  -webkit-animation-delay: 76ms;
+          animation-delay: 76ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="212"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 172ms;
-          animation-delay: 172ms;
+  -webkit-animation-delay: 76ms;
+          animation-delay: 76ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="212"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="212"] {
-  -webkit-animation-delay: 172ms;
-          animation-delay: 172ms;
+  -webkit-animation-delay: 76ms;
+          animation-delay: 76ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 214ms;
-          animation-delay: 214ms;
+  -webkit-animation-delay: 292ms;
+          animation-delay: 292ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="213"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 214ms;
-          animation-delay: 214ms;
+  -webkit-animation-delay: 292ms;
+          animation-delay: 292ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="213"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="213"] {
-  -webkit-animation-delay: 214ms;
-          animation-delay: 214ms;
+  -webkit-animation-delay: 292ms;
+          animation-delay: 292ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 112ms;
-          animation-delay: 112ms;
+  -webkit-animation-delay: 99ms;
+          animation-delay: 99ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="221"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 112ms;
-          animation-delay: 112ms;
+  -webkit-animation-delay: 99ms;
+          animation-delay: 99ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="221"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="221"] {
-  -webkit-animation-delay: 112ms;
-          animation-delay: 112ms;
+  -webkit-animation-delay: 99ms;
+          animation-delay: 99ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 139ms;
-          animation-delay: 139ms;
+  -webkit-animation-delay: 223ms;
+          animation-delay: 223ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="222"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 139ms;
-          animation-delay: 139ms;
+  -webkit-animation-delay: 223ms;
+          animation-delay: 223ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="222"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="222"] {
-  -webkit-animation-delay: 139ms;
-          animation-delay: 139ms;
+  -webkit-animation-delay: 223ms;
+          animation-delay: 223ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 121ms;
-          animation-delay: 121ms;
+  -webkit-animation-delay: 34ms;
+          animation-delay: 34ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="223"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 121ms;
-          animation-delay: 121ms;
+  -webkit-animation-delay: 34ms;
+          animation-delay: 34ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="223"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="223"] {
-  -webkit-animation-delay: 121ms;
-          animation-delay: 121ms;
+  -webkit-animation-delay: 34ms;
+          animation-delay: 34ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 7ms;
-          animation-delay: 7ms;
+  -webkit-animation-delay: 232ms;
+          animation-delay: 232ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="231"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 7ms;
-          animation-delay: 7ms;
+  -webkit-animation-delay: 232ms;
+          animation-delay: 232ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="231"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="231"] {
-  -webkit-animation-delay: 7ms;
-          animation-delay: 7ms;
+  -webkit-animation-delay: 232ms;
+          animation-delay: 232ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 24ms;
-          animation-delay: 24ms;
+  -webkit-animation-delay: 195ms;
+          animation-delay: 195ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="232"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 24ms;
-          animation-delay: 24ms;
+  -webkit-animation-delay: 195ms;
+          animation-delay: 195ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="232"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="232"] {
-  -webkit-animation-delay: 24ms;
-          animation-delay: 24ms;
+  -webkit-animation-delay: 195ms;
+          animation-delay: 195ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 130ms;
-          animation-delay: 130ms;
+  -webkit-animation-delay: 29ms;
+          animation-delay: 29ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="233"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 130ms;
-          animation-delay: 130ms;
+  -webkit-animation-delay: 29ms;
+          animation-delay: 29ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="233"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="233"] {
-  -webkit-animation-delay: 130ms;
-          animation-delay: 130ms;
+  -webkit-animation-delay: 29ms;
+          animation-delay: 29ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 275ms;
-          animation-delay: 275ms;
+  -webkit-animation-delay: 240ms;
+          animation-delay: 240ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="311"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 275ms;
-          animation-delay: 275ms;
+  -webkit-animation-delay: 240ms;
+          animation-delay: 240ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="311"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="311"] {
-  -webkit-animation-delay: 275ms;
-          animation-delay: 275ms;
+  -webkit-animation-delay: 240ms;
+          animation-delay: 240ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 169ms;
-          animation-delay: 169ms;
+  -webkit-animation-delay: 7ms;
+          animation-delay: 7ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="312"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 169ms;
-          animation-delay: 169ms;
+  -webkit-animation-delay: 7ms;
+          animation-delay: 7ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="312"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="312"] {
-  -webkit-animation-delay: 169ms;
-          animation-delay: 169ms;
+  -webkit-animation-delay: 7ms;
+          animation-delay: 7ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 234ms;
-          animation-delay: 234ms;
+  -webkit-animation-delay: 140ms;
+          animation-delay: 140ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="313"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 234ms;
-          animation-delay: 234ms;
+  -webkit-animation-delay: 140ms;
+          animation-delay: 140ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="313"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="313"] {
-  -webkit-animation-delay: 234ms;
-          animation-delay: 234ms;
+  -webkit-animation-delay: 140ms;
+          animation-delay: 140ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 248ms;
-          animation-delay: 248ms;
+  -webkit-animation-delay: 194ms;
+          animation-delay: 194ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="321"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 248ms;
-          animation-delay: 248ms;
+  -webkit-animation-delay: 194ms;
+          animation-delay: 194ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="321"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="321"] {
-  -webkit-animation-delay: 248ms;
-          animation-delay: 248ms;
+  -webkit-animation-delay: 194ms;
+          animation-delay: 194ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 107ms;
-          animation-delay: 107ms;
+  -webkit-animation-delay: 277ms;
+          animation-delay: 277ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="322"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 107ms;
-          animation-delay: 107ms;
+  -webkit-animation-delay: 277ms;
+          animation-delay: 277ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="322"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="322"] {
-  -webkit-animation-delay: 107ms;
-          animation-delay: 107ms;
+  -webkit-animation-delay: 277ms;
+          animation-delay: 277ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 54ms;
-          animation-delay: 54ms;
+  -webkit-animation-delay: 62ms;
+          animation-delay: 62ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="323"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 54ms;
-          animation-delay: 54ms;
+  -webkit-animation-delay: 62ms;
+          animation-delay: 62ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="323"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="323"] {
-  -webkit-animation-delay: 54ms;
-          animation-delay: 54ms;
+  -webkit-animation-delay: 62ms;
+          animation-delay: 62ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 160ms;
-          animation-delay: 160ms;
+  -webkit-animation-delay: 145ms;
+          animation-delay: 145ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="331"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 160ms;
-          animation-delay: 160ms;
+  -webkit-animation-delay: 145ms;
+          animation-delay: 145ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="331"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="331"] {
-  -webkit-animation-delay: 160ms;
-          animation-delay: 160ms;
+  -webkit-animation-delay: 145ms;
+          animation-delay: 145ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 185ms;
-          animation-delay: 185ms;
+  -webkit-animation-delay: 275ms;
+          animation-delay: 275ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="332"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 185ms;
-          animation-delay: 185ms;
+  -webkit-animation-delay: 275ms;
+          animation-delay: 275ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="332"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="332"] {
-  -webkit-animation-delay: 185ms;
-          animation-delay: 185ms;
+  -webkit-animation-delay: 275ms;
+          animation-delay: 275ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap, .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap:before, .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap:after,
 .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap > [class^="cube-"],
 .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap > [class^="cube-"]:before,
 .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap > [class^="cube-"]:after {
-  -webkit-animation-delay: 179ms;
-          animation-delay: 179ms;
+  -webkit-animation-delay: 267ms;
+          animation-delay: 267ms;
 }
 
 .heroSection .cubesContainer .cube[data-cube="333"] > .cube-wrap [class^="shadow-"] {
-  -webkit-animation-delay: 179ms;
-          animation-delay: 179ms;
+  -webkit-animation-delay: 267ms;
+          animation-delay: 267ms;
 }
 
 .heroSection .cubesContainer [class^="shadow-"][data-cube="333"]:before,
 .heroSection .cubesContainer .large-shadow[data-cube="333"] {
-  -webkit-animation-delay: 179ms;
-          animation-delay: 179ms;
+  -webkit-animation-delay: 267ms;
+          animation-delay: 267ms;
 }
 
 .heroSection .content {
@@ -1589,18 +1676,6 @@ body {
           animation: typing 3s steps(10) forwards;
 }
 
-@-webkit-keyframes typing {
-  0% {
-    color: #c72b2b;
-    width: 100%;
-  }
-  100% {
-  }
-  to {
-    width: 0;
-  }
-}
-
 @keyframes typing {
   0% {
     color: #c72b2b;
@@ -1610,12 +1685,6 @@ body {
   }
   to {
     width: 0;
-  }
-}
-
-@-webkit-keyframes caret {
-  50% {
-    color: transparent;
   }
 }
 
@@ -1799,6 +1868,7 @@ body {
   padding: 2rem 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  position: relative;
 }
 
 .aboutUsSection .content {
@@ -1822,6 +1892,7 @@ body {
           justify-content: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  padding: 0.5rem 0 0.5rem 1rem;
 }
 
 .aboutUsSection .content .desc p {
@@ -1832,6 +1903,51 @@ body {
   font-size: 28px;
   font-weight: 500;
   line-height: 1.3;
+  opacity: 0;
+}
+
+.aboutUsSection .content .desc::before {
+  content: "<p>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  top: -1rem;
+  font-weight: 400;
+  font-size: 24px;
+  z-index: 20;
+  color: #585858;
+  left: 0;
+}
+
+.aboutUsSection .content .desc::after {
+  z-index: 20;
+  font-size: 24px;
+  content: "</p>";
+  position: absolute;
+  font-family: "Permanent Marker", cursive;
+  bottom: -1rem;
+  font-weight: 400;
+  color: #585858;
+  left: 0;
+}
+
+.aboutUsSection .content .desc.entered p {
+  -webkit-animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.aboutUsSection .content .desc.entered p:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.aboutUsSection .content .desc.entered p:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.aboutUsSection .content .desc.entered p:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
 }
 
 .aboutUsSection .content .text-sphere .tagcloud {
@@ -1843,6 +1959,8 @@ body {
 .skillsSection {
   height: 100vh;
   width: 100%;
+  width: 90%;
+  margin: 0 auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 2rem 1rem;
@@ -1854,15 +1972,15 @@ body {
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 3rem;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
 .skillsSection .skills .skill {
   width: 100%;
   height: 250px;
-  -webkit-box-shadow: 0 0 10px white;
-          box-shadow: 0 0 10px white;
+  -webkit-box-shadow: 0 0 10px #3d93a9;
+          box-shadow: 0 0 10px #3d93a9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1884,7 +2002,7 @@ body {
 }
 
 .skillsSection .skills .skill i {
-  color: gray;
+  color: #3d93a9;
   font-size: 56px;
 }
 
@@ -1900,6 +2018,8 @@ body {
 
 .skillsSection .skills .skill p {
   font-size: 16px;
+  letter-spacing: 4px;
+  line-height: 1.4;
 }
 
 .skillsSection .skills .skill .progressOuter {
@@ -1938,10 +2058,111 @@ body {
 }
 
 .skillsSection .skills .skill .progressOuter .inner5 {
-  width: 70%;
+  width: 80%;
 }
 
 .skillsSection .skills .skill .progressOuter .inner6 {
   width: 60%;
+}
+
+.skillsSection .skills .skill .progressOuter .inner7 {
+  width: 60%;
+}
+
+.skillsSection .skills.entered .skill {
+  -webkit-animation: scale-in-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.skillsSection .skills.entered .skill:nth-child(1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+.skillsSection .skills.entered .skill:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.skillsSection .skills.entered .skill:nth-child(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.skillsSection .skills.entered .skill:nth-child(4) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+
+.skillsSection .skills.entered .skill:nth-child(5) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.skillsSection .skills.entered .skill:nth-child(6) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+}
+
+.skillsSection .skills.entered .skill:nth-child(7) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.skillsSection .skills.entered .skill:nth-child(8) {
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=home.css.map */
